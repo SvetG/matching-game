@@ -1,0 +1,241 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Delius', cursive;
+}
+
+
+.container {
+    background: linear-gradient(to bottom right, #ffe6e6 0%, #fff2e6 91%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Stylish', sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    font-size: 45px;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    background-color: #ffffff;
+    width: 640px;
+    min-height: 660px;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow:  0px 0px 17px 2px rgba(0,0,0,0.75);/*12px 15px 20px 0 rgba(46, 61, 73, 0.5);*/
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 7px;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 100%;
+    width: 100%;
+    background: #330033;
+    font-size: 0;
+    color: #000000;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #ffffff;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 50px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: black;/*#02ccba;*/
+    font-size: 50px;
+    color: white;
+}
+
+.deck .card.no-match{
+    background: #f9ecec;
+}
+
+.animated  {
+    animation-duration: .8s;
+    animation-delay: .1s;
+}
+.deck .card.disabled {
+    pointer-events: none;
+}
+
+.fa-kiwi-bird {
+    color: #996633;
+}
+
+.fa-birthday-cake {
+    color:#ffdb00;
+}
+
+.fa-pied-piper-alt {
+    color: #004d00;
+}
+
+.fa-d-and-d {
+    color:#e60000;
+}
+
+.fa-wine-glass {
+    color:#660000;
+}
+
+.fa-paw {
+    color:#9e1fdb;
+}
+
+.fa-people-carry {
+    color: #00009e;
+}
+
+
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel #stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 15px 0 0;
+}
+
+.score-panel #stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.timer {
+  display: inline-block;
+  margin: 0px 40px;
+}
+
+.score-panel .restart,
+.try-again {
+    float: right;
+    cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  top:0;
+}
+
+.modal-card {
+  width: 65%;
+  height: 65%
+  padding: 10px;
+  margin: 20% auto;
+  left: 0;
+  right: 0;
+  position: relative;
+  background-color: #f3f3f3;
+}
+
+h2 {
+  padding-top: 45px;
+  text-align: center;
+}
+
+#win-info {
+  padding: 15px 45px;
+}
+
+.exit-button {
+  float: right;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+#final-stars {
+  padding: 15px 45px;
+}
+
+#final-stars li {
+  list-style: none;
+  display: inline-block;
+}
+
+#final-time {
+  display: inline;
+  padding: 15px 45px;
+}
+
+.restart {
+  text-align: center;
+  padding: 15px;
+}
+
+.fa-repeat {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  .deck {
+    width: 75%;
+    grid-template-columns: repeat(2, 100px);
+    grid-template-rows: repeat(8, 100px);
+  }
+  h1 {
+    font-size: 35px;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 867px) {
+  .deck {
+    width: 75%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
