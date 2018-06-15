@@ -180,7 +180,7 @@ function restartGame () {
   for(let i = 0; i < cardArray.length; i++){
     allCards[i].setAttribute("class", "card");
     openCards = [];
-		matchingCards = [];
+    matchingCards = [];
   }
   counter = 0;
   moves.innerText = counter;
