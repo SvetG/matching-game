@@ -179,7 +179,8 @@ function restartGame () {
   newGame();
   for(let i = 0; i < cardArray.length; i++){
     allCards[i].setAttribute("class", "card");
-    matchingCards = [];
+    openCards = [];
+		matchingCards = [];
   }
   counter = 0;
   moves.innerText = counter;
@@ -192,7 +193,7 @@ function restartGame () {
 }
 
 /********
-Reseting the stars back to full
+Resetting the stars back to full
 ******/
 function resetStars() {
   starOne.className = "fa fa-star";
